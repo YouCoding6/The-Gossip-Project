@@ -1,0 +1,1 @@
+The gossip project consiste à afficher les potins qui se trouvent dans la BDD dans une page d'acceuil en utilisant le pattern MVC pour naviguer d'un potin à l'autre et d'afficher les informations sur l'auteur de chaque potin

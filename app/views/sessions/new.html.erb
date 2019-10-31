@@ -1,0 +1,18 @@
+
+<%= form_tag sessions_path, method: "post" do %>
+      <%= label_tag 'email' %>
+      <%= text_field_tag 'email', @email %>
+      <br /> <br />
+      <%= label_tag 'password' %>
+      <%= password_field_tag 'password', @password %>
+      <br /> <br />
+      <%= submit_tag "Login" %>
+<%end %>
+
+<% if flash[:notice] %>
+    <div class="alert alert-dismissible alert-danger">
+    <div class="notice"><strong><%= flash[:notice] %></strong>
+    </div>
+   </div>
+ <%end%>  
+    

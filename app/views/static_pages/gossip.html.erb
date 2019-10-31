@@ -1,7 +1,0 @@
-<div class="card" style="width: 30rem;">
-  <div class="card-body">
-    <h5 class="card-title"><%= Gossip.all[(params[:id].to_i)].title%></h5>
-    <p class="card-text"><%= Gossip.all[(params[:id].to_i)].content %></p>
-    <a class="btn btn-primary"href="/profile/<%= Gossip.all[(params[:id].to_i)].user.id %>"><%= Gossip.all[(params[:id].to_i)].user.first_name%></a>
-  </div>
-</div>

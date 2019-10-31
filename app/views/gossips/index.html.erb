@@ -1,0 +1,24 @@
+<div>     
+      <div class="alert alert-success alert-dismissible">
+                <strong><%= flash[:notice] %></strong> 
+      </div>      
+      
+        <ul class="list-group">
+
+        	<h3 class="list-group-item"> The list of gossips </h3>
+          <a href="<%=new_gossip_path%>"> Create a new gossip </a>
+        	<% @gossips.each do |gossip| %>
+    		<li class="list-group-item"><%= gossip.user.first_name %>
+          								<%= gossip.title%>
+          								<a href="<%=gossip_path(gossip.id)%>" class ="btn btn-primary" >Lien vers le potin</a>
+          								<a href="<%=edit_gossip_path(gossip.id)%>"class ="btn btn-default">Editer</a>
+                          
+                          
+                        <% end %>
+
+                         </li>
+          								
+		</ul>     
+        
+</div>  
+

@@ -1,0 +1,13 @@
+<div class="list-group">
+	<p class="list-group-item">Ceci est le profil de <%= @user.first_name %></p>
+
+     <ul class="list-group">
+          <li class="list-group-item">First name:<%= @user.first_name %></li>
+          <li class="list-group-item">Last name:<%= @user.last_name %></li>
+          <li class="list-group-item">Description:<%= @user.description %></li>
+          <li class="list-group-item">Email:<%= @user.email%></li>
+          <li class="list-group-item">Age:<%= @user.age%></li>
+          <li class="list-group-item">City:<%= link_to @user.city.name, city_path(@user.city.id)%></li>
+         
+     </ul>     
+</div>

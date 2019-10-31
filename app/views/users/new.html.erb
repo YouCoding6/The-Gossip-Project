@@ -1,0 +1,18 @@
+
+<%= form_tag users_path, method: "post" do %>
+    <!-- form_tag url_for(action:'create'), method: "post" do  -->
+      <%= label_tag 'email' %>
+      <%= text_field_tag 'email', @email %>
+      <br /> <br />
+      <%= label_tag 'Password' %>
+      <%= text_field_tag 'password', @password %>
+      <br /> <br />
+      <%= submit_tag "Créer un compte" %>
+    <% end %>
+     <% if flash[:notice] %>
+    <div class="alert alert-dismissible alert-danger">
+    <div class="notice"><strong><%= flash[:notice] %></strong>
+    </div>
+   </div>
+    
+   <% end %>

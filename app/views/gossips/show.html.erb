@@ -1,0 +1,16 @@
+<div class="card" style="width: 30rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= @gossip.title%></h5>
+    <p class="card-text"><%= @gossip.content %></p>
+    <p>Created by:<%= link_to @gossip.user.first_name, user_path(@gossip.user.id)%></span></p>
+    <% if is_owner?(@gossip.user.id) %>
+    <p> <%= link_to "Supprimer", gossip_path(:id => @gossip.id), data: { confirm: 'Are you sure?' }, method: :delete %></p>
+    <%end%>   
+          
+  </div>
+
+
+</div>
+	
+
+

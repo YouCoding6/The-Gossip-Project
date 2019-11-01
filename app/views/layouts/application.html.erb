@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
    
+  </head>
+
+  <body>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">The Gossip Project</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item">
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    <a class="navbar-brand" href="#">The Gossip Project</a>
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item ">
         <a class="nav-link" href="/">Home</a>
       </li>
       <li class="nav-item">
@@ -19,18 +27,21 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/contact">Contact</a>
-      </li> 
+      </li>
     </ul>
-    <%= button_to "Se déconnecter", session_path(session.id), :method=>:delete%>
-    <%= link_to "Se connecter", new_session_path %></li>
-    <%= link_to "S'inscrire", new_user_path %></li>
-    
+    <form class="form-inline my-2 my-lg-0">
+    <% if logged_in?  %>
+      <%= link_to "Se déconnecter", session_path(session.id), method: :delete, class: "card-link btn btn-danger my-2 my-sm-0" %>
+      <%else%>  
+        <%= link_to "S'identifier", new_session_path, class: "card-link btn btn-link" %>
+        <%= link_to "creer un compte", new_user_path, class: "card-link btn btn-primary" %>
+      <% end %>    
+    </form>
+
   </div>
 </nav>
-   
-  </head>
-
-  <body>
+  </div>
+    </nav>   
     <%= yield %>
   </body>
 </html>
